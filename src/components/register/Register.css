@@ -1,0 +1,20 @@
+
+
+.box1 {
+/* border: solid red 1px; */
+margin: 100px auto;
+/* background-image: url(https://as2.ftcdn.net/v2/jpg/00/38/07/05/1000_F_38070558_wpYEti3XoyNMkPEPCn0WIyhmboqJuysh.jpg); */
+background-image: url(https://as1.ftcdn.net/v2/jpg/01/41/48/32/1000_F_141483279_Ed0Wx0LF9tfF7zGVRYG7Kv5fL0suXYEb.jpg);
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .box1 {
+      text-align: center;
+    }
+  }
+
+
+
