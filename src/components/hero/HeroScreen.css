@@ -4,8 +4,8 @@
 }
 
 .movie-poster{
-  height: 300px;
-  border: 1px solid gold;
+  height: 350px;
+  border: 1px solid white;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@
 
 .movie-detail{
     position:absolute;
-    top: 200px;
+    top: 150px;
     display:flex;
     justify-content: space-evenly;
     width: 100%;
@@ -40,6 +40,10 @@
     color: white;
     display: flex;
     align-items: center;
+}
+
+.movie-title > h4 {
+    font-size: 4rem;
 }
 
 .movie-buttons-container{
