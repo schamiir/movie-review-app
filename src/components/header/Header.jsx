@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faVideoSlash } from "@fortawesome/free-solid-svg-icons"
+import { faClapperboard } from "@fortawesome/free-solid-svg-icons"
 import Button from 'react-bootstrap/Button'
 import Container  from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href='/' style={{color: 'gold'}}>
-            <FontAwesomeIcon icon={faVideoSlash}/>Gold
+        <Navbar.Brand href='/' style={{color: 'red'}}>
+            <FontAwesomeIcon icon={faClapperboard}/> CineMate
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse>
@@ -21,10 +21,10 @@ const Header = () => {
                         navbarScroll
                     >
                     <NavLink className='nav-link' to='/'>Home</NavLink>
-                    <NavLink className='nav-link' to='/watchlist'>Watchlist</NavLink>
+                   
                 </Nav>
-            <Button variant='outline-info' className='me-2' >Login</Button>
-            <Button variant='outline-info'>Register</Button>
+            <Button variant='outline-light' className='me-2'>Login</Button>
+            <Button variant='outline-danger'>Register</Button>
         </Navbar.Collapse>
       </Container>
        
