@@ -1,10 +1,10 @@
-import Hero from '../hero/HeroScreen'
+import HeroScreen from '../hero/HeroScreen'
 
 const HomeScreen = ({movies}) => {
 
   return (
 
-    <Hero movies = {movies}/>
+    <HeroScreen movies = {movies}/>
     
   )
 }

@@ -5,7 +5,7 @@ import Layout from './components/Layout'
 import { Routes, Route } from 'react-router-dom'
 import HomeScreen from './components/home/HomeScreen'
 import Header from './components/header/Header'
-import Trailer from './components/trailer/Trailer'
+import Reviews from './components/reviews/Reviews'
 import NotFound from './components/notFound/NotFound'
 
 
@@ -15,14 +15,20 @@ function App() {
   const [movie, setMovie] = useState();
   const [reviews, setReviews] = useState();
 
+  const url = '/movie/popular?api_key=191d216958140cd776e116dfbb3d3a15';
+
   const getMovies = async () => {
 
     try
     {
 
-      const response = await api.get('/api/v1/movies')
-      
-      setMovies(response.data)
+      const response = await api.get(url)
+
+      .then((response) => {
+        setMovies(response.data);
+        console.log(movies)
+      })
+     
 
       // promise made from axiosConfig
     }
@@ -37,7 +43,7 @@ function App() {
 
     try
     {
-      const response = await api.get(`/api/v1/movies/${movieId}`)
+      const response = await api.get(`https://api.themoviedb.org/3/find/${movieId}?api_key=191d216958140cd776e116dfbb3d3a15&language=en-US&external_source=imdb_id`)
       
       const singleMovie = response.data;
 
@@ -60,9 +66,18 @@ function App() {
       <Header/>
       <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route path="/" element={<Home movies={movies} />} ></Route>
-            <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
-            <Route path="/Reviews/:movieId" element ={<Reviews getMovieData = {getMovieData} movie={movie} reviews ={reviews} setReviews = {setReviews} />}></Route>
+            <Route path="/" element={<HomeScreen movies={movies} />} ></Route>
+          
+           
+            <Route path="/Reviews/:movieId" 
+              element ={
+              <Reviews getMovieData = {getMovieData} 
+              movie={movie} 
+              reviews ={reviews}
+              setReviews = {setReviews} />}>
+              
+            </Route>
+            
             <Route path="*" element = {<NotFound/>}></Route>
           </Route>
       </Routes>

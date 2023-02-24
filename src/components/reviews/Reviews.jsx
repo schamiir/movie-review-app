@@ -10,7 +10,8 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
   const revText = useRef();
   let params = useParams();
-  const movieId = params.movieId;  
+  const movieId = params.movieId;
+ 
 
   useEffect(() => {
       getMovieData(movieId);
@@ -23,9 +24,9 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
     try
     {
-        const response = await api.post('/api/v1/reviews',{reviewBody:rev.value,movieId:movieId});
+        const response = await api.post('',{reviewBody:rev.value,movieId:movieId});
 
-        const updatedReviews = [...reviews,{body:review.value}];
+        const updatedReviews = [...reviews,{body:rev.value}];
 
         rev.value = '';
 
@@ -42,11 +43,11 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
   return (
    <Container>
      <Row>
-       <Col><h3>Review</h3></Col>
+       <Col><h3>Reviews</h3></Col>
      </Row>
      <Row className='mt-2'>
         <Col>
-            <img src={movie.poster} alt={movie.title} className='img-fluid'/>
+            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className='img-fluid'/>
         </Col>
         <Col>
         {
@@ -69,17 +70,26 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
             reviews?.map((r) => {
                 return (
                     <>
-                        <Row>
-                            <Col>{r.body}</Col>
-                        </Row>
-                    </>
-                )
-            })
-        }
-
-        </Col>
-     </Row>
-   </Container>
+                                <Row>
+                                    <Col>{r.body}</Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <hr />
+                                    </Col>
+                                </Row>                                
+                            </>
+                        )
+                    })
+                }
+            </Col>
+        </Row>
+        <Row>
+            <Col>
+                <hr />
+            </Col>
+        </Row>        
+    </Container>
   )
 }
 
