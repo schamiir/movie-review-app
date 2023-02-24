@@ -34,12 +34,12 @@ const navigate = useNavigate();
                                     <h4>{movie.title}</h4>
                                 </div>
                   
-                                <div className='movie-button-container'>
+                                {/* <div className='movie-button-container'>
                                    
                                     <div className='movie-review-button-container'>
-                                      <Button variant='info' onClick={() => reviews(movie.imdb_id)}>Reviews</Button>
+                                      <Button variant='warning' onClick={() => reviews(movie.imdb_id)}>Reviews</Button>
                                     </div>
-                              </div>
+                              </div> */}
                             </div>
                         </div>
                     </div>
