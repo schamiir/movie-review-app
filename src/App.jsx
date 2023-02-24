@@ -7,7 +7,9 @@ import HomeScreen from './components/home/HomeScreen'
 import Header from './components/header/Header'
 import Reviews from './components/reviews/Reviews'
 import NotFound from './components/notFound/NotFound'
+import Login from './components/login/login.jsx'
 import Register from './components/register/Register'
+
 
 
 function App() {
@@ -68,6 +70,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/" element={<HomeScreen movies={movies} />} ></Route>
+            <Route path="/login" element={<Login/>}></Route>
           
            <Route path="/register" element={<Register />} />
             <Route path="/Reviews/:movieId" 

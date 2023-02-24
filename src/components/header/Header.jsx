@@ -29,16 +29,12 @@ const Header = () => {
                    
                 </Nav>
 
-            <Button variant='outline-light' className='me-2'>Login</Button>
-            
-
-          
+            <Button href="/login" variant="outline-light" className='me-2' >Login</Button>
             <Button variant='outline-danger'
             onClick={()=>{
               navigate("/register");
             }}
             >Register</Button>
-            
         </Navbar.Collapse>
       </Container>
        
