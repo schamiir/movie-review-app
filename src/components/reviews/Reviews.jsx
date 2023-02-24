@@ -47,7 +47,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
      </Row>
      <Row className='mt-2'>
         <Col>
-            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className='img-fluid'/>
+            <img src={`https://image.tmdb.org/t/p/original${movieId.backdrop_path}`} className='img-fluid'/>
         </Col>
         <Col>
         {
