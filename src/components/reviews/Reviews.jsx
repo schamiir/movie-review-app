@@ -24,7 +24,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
     try
     {
-        const response = await api.post('',{reviewBody:rev.value,movieId:movieId});
+        const response = await api.post('/',{reviewBody:rev.value,imdb_id:movieId});
 
         const updatedReviews = [...reviews,{body:rev.value}];
 
@@ -47,7 +47,9 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
      </Row>
      <Row className='mt-2'>
         <Col>
-            <img src={`https://image.tmdb.org/t/p/original${movieId.backdrop_path}`} className='img-fluid'/>
+        {movie?.poster_path && (
+            <img src={movie?.poster_path} className="img-fluid" alt="movie backdrop" />
+            )}
         </Col>
         <Col>
         {

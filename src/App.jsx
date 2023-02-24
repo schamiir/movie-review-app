@@ -12,7 +12,7 @@ import NotFound from './components/notFound/NotFound'
 function App() {
 
   const [movies, setMovies] = useState();
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState({});
   const [reviews, setReviews] = useState();
 
   const url = '/movie/popular?api_key=191d216958140cd776e116dfbb3d3a15';
