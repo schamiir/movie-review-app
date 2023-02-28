@@ -24,7 +24,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
     try
     {
-        const response = await api.post('/',{reviewBody:rev.value,imdb_id:movieId});
+        const response = await api.post('/reviews/create',{reviewBody:rev.value,imdb_id:movieId});
 
         const updatedReviews = [...reviews,{body:rev.value}];
 
@@ -47,9 +47,24 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
      </Row>
      <Row className='mt-2'>
         <Col>
+        <Row>
+            {movie?.title && (
+                <span>{movie?.original_title}</span>
+             )}
+             <span>Place holder Title</span>
+        </Row>
+        <Row>
         {movie?.poster_path && (
             <img src={movie?.poster_path} className="img-fluid" alt="movie backdrop" />
             )}
+                  <span>Place holder Img</span>
+        </Row>
+        <Row>
+            {movie?.overview && (
+                <p>{movie?.overview}</p>
+            )}
+                  <span>Place holder Desc</span>
+        </Row>
         </Col>
         <Col>
         {
