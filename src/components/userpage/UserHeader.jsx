@@ -29,10 +29,15 @@ const UserHeader = ( { navigation }) => {
 
   }
 
+  const handleLogout = () =>{
+    sessionStorage.clear()
+    navigate("/")
+  }
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" >
       <Container>
-        <Navbar.Brand href="/" style={{ color: "red" }}>
+        <Navbar.Brand href={sessionStorage.getItem("uid") ? "/loggedIn" : "/"} style={{ color: "red" }}>
           <FontAwesomeIcon icon={faClapperboard} /> CineMate
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -42,7 +47,7 @@ const UserHeader = ( { navigation }) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <NavLink className="nav-link" to="/allUserReviews">
+            <NavLink className="nav-link" to="/my-reviews">
               My Reviews
             </NavLink>
             <NavLink className="nav-link" to="/exploreReviews">
@@ -50,7 +55,7 @@ const UserHeader = ( { navigation }) => {
             </NavLink>
           </Nav>
           <>
-            <Form className="d-flex w-50">
+            <Form className="d-flex w-50" onSubmit={e => handleSubmit(e)}>
               <Form.Control
                 type="search"
                 placeholder={error ? "Invalid Response" : "Search"}
@@ -59,7 +64,7 @@ const UserHeader = ( { navigation }) => {
                 value={movie}
                 onChange={(e) => setMovie(e.target.value)}
               />
-              <Button type="button" className="mr-2" variant="outline-success"  onClick={e => handleSubmit(e)}>
+              <Button type="submit" className="mr-2" variant="outline-success" >
                 Search
               </Button>
             </Form>
@@ -67,9 +72,7 @@ const UserHeader = ( { navigation }) => {
           <Button
             className="ms-auto"
             variant="outline-danger"
-            onClick={() => {
-              navigate("/");
-            }}
+            onClick={() => handleLogout()}
           >
             Logout
           </Button>

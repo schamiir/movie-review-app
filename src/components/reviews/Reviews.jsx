@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef} from "react";
 import api from '../../api/axiosConfig';
-import {useLocation, useParams} from 'react-router-dom';
+import {useLocation, useNavigate, useParams} from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import ReviewForm from "../reviewForm/ReviewForm";
 import Form from "react-bootstrap/Form";
@@ -10,13 +10,9 @@ import axios from "axios";
 import UserHeader from "../userpage/UserHeader";
 
 const Reviews = ({getMovieData}) => {
-
+    const navigate = useNavigate()
   const [movie, setMovie] = useState(null);
   const[review, setReview] = useState("")
-//   const state = useLocation();
-// const movies = state.state.allMovies;
-
-  const revText = useRef();
   const {movieId} = useParams();    
  
 
@@ -43,18 +39,19 @@ const handleSubmit = async (e) => {
             movieOverview: movie.overview,
             moviePoster: movie.backdrop_path,
             review: review,
-            userId: sessionStorage.getItem("uid")
+            userId: sessionStorage.getItem("uid"),
+            username: sessionStorage.getItem("user")
         })
     })
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            // if (data == "CREATED") {
-            //     navigate("/login")
-            // }
-            // else {
-            //     setError("Unable to Register. Error: " + data)
-            // }
+            if (data == "CREATED") {
+                navigate("/my-reviews")
+            }
+            else {
+                setError("Unable to Register. Error: " + data)
+            }
         })
 }
 

@@ -30,7 +30,8 @@ function Login() {
       .then(data => {
         if(data[0] == 'OK'){
           sessionStorage.setItem("uid", data[1])
-          navigate("/logedIn");
+          sessionStorage.setItem("user", data[2])
+          navigate("/loggedIn");
           dispatch(logedIn())
         }
         else{

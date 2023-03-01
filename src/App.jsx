@@ -84,10 +84,10 @@ function App() {
               setReviews = {setReviews} />}>
             </Route>
             {/* Need to add user id in the route below! :) */}
-            <Route path="/allUserReviews" element={<UserReviews/>}/>
+            <Route path="/my-reviews" element={<UserReviews/>}/>
             <Route path="/exploreReviews" element={<ExploreReviews/>}/>
             <Route path='/results' element={<ResultsPage/>}/>
-            <Route path="/logedIn" element={<UserPage movies={movies}/>}></Route>
+            <Route path="/loggedIn" element={<UserPage movies={movies}/>}></Route>
             <Route path="*" element = {<NotFound/>}></Route>
           </Route>
       </Routes>

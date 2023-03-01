@@ -17,7 +17,6 @@ const Header = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  console.log(logedIn);
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
