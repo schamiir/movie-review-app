@@ -31,7 +31,7 @@ const Header = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                    <NavLink className='nav-link' to='/allreviews'>My Profile</NavLink>
+                    {/* <NavLink className='nav-link' to='/allreviews'>My Profile</NavLink> */}
                 </Nav>
                   <>
             <Button 

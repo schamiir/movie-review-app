@@ -1,15 +1,13 @@
+
 import React from 'react'
 import UserHeader from '../userpage/UserHeader'
-import "./UserReviews.scss"
+import "./ExploreReviews.scss"
 import { faComment, faComments, faHeart, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
-
-function UserReviews() {
-//Need the api call to get all the reviews for the user and display their data
-
+function ExploreReviews() {
   return (
-    <>
-    <UserHeader/>
+<>
+    <UserHeader />
     <div className="projcard-container mt-5"  
     // key={movie.imdb_id}
     >
@@ -43,4 +41,4 @@ function UserReviews() {
   )
 }
 
-export default UserReviews
+export default ExploreReviews
