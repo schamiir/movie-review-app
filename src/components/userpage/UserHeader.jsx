@@ -6,7 +6,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
-import api from "../../api/axiosConfig";
 import { useState } from "react";
 
 const UserHeader = ( { navigation }) => {

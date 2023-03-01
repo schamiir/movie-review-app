@@ -37,13 +37,6 @@ const navigate = useNavigate();
                                 <div className='movie-title'>
                                     <h4>{movie.title}</h4>
                                 </div>
-                  
-                                {/* <div className='movie-button-container'>
-                                   
-                                    <div className='movie-review-button-container'>
-                                      <Button variant='warning' onClick={() => reviews(movie.imdb_id)}>Reviews</Button>
-                                    </div>
-                              </div> */}
                             </div>
                         </div>
                     </div>

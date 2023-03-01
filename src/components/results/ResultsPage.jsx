@@ -12,10 +12,6 @@ function ResultsPage() {
   const movies = state.state.movieData;
   const navigate = useNavigate();
 
-  useEffect (() => {
-    console.log(movies)
-  }, []) 
-
   return (
     <>
     <UserHeader />

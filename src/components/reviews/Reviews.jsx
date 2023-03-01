@@ -11,15 +11,12 @@ import UserHeader from "../userpage/UserHeader";
 
 const Reviews = ({getMovieData}) => {
 
-  const [reviews, setReviews] = useState([]);
   const [movie, setMovie] = useState(null);
-  const [movieImg, setMovieImg] = useState(null);
   const[review, setReview] = useState("")
 //   const state = useLocation();
 // const movies = state.state.allMovies;
 
   const revText = useRef();
-//   let params = useParams();
   const {movieId} = useParams();    
  
 
@@ -34,52 +31,8 @@ const Reviews = ({getMovieData}) => {
         console.log(data)
         setMovie(data)})
         .catch((error) => console.log(error));
-        
-    // const getMovies = async () => {
-
-    //     try
-    //     {
-    
-    //       const response = await axios.get(searchUrl)
-    
-    //       .then((response) => {
-    //         setMovie(response.data);
-    //         console.log(response.data);
-    //       })
-         
-    
-    //       // promise made from axiosConfig
-    //     }
-    //     catch(err)
-    //     {
-    //       console.log(err)
-    //     }
-       
-    //   }
-      
-    //   getMovies();
-      
   }, [movieId]);
 
-//   const addReview = async (e) => {
-//     e.preventDefault();
-//     const rev = revText.current;
-    
-
-//     try {
-//         const response = await api.post('/reviews/create',{reviewBody:rev.value,imdb_id:movieId});
-
-//         const updatedReviews = [...reviews,{body:rev.value}];
-
-//         rev.value = '';
-
-//         setReviews(updatedReviews);
-//     }
-//     catch(err)
-//     {
-//         console.log(err);
-//     }
-//   }
 const handleSubmit = async (e) => {
     e.preventDefault()
     fetch("http://localhost:8080/reviews/create", {

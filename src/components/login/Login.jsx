@@ -37,9 +37,6 @@ function Login() {
         }
       })
   }
-//   navigate("/logedIn");
-//   dispatch(logedIn())
-// }}
 
   
   return (
