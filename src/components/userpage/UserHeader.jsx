@@ -17,7 +17,6 @@ const UserHeader = ( { navigation }) => {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
-    let movies = []
     let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=a9bd84c15f8fa17808fb7e767b72bc08&query=${movie}`;
     fetch(searchUrl)
       .then(res => res.json())
@@ -26,10 +25,7 @@ const UserHeader = ( { navigation }) => {
                   setError("No movies found")
           }
           else {
-            console.log(data.results)
-            navigate("/results", {state:{movieData: data}})
-            // .navigation.push("/results", {movieData: data.results});
-            
+            navigate("/results", {state:{movieData: data}})            
           }})
 
   }
@@ -61,7 +57,7 @@ const UserHeader = ( { navigation }) => {
                 value={movie}
                 onChange={(e) => setMovie(e.target.value)}
               />
-              <Button type="button" variant="outline-success"  onClick={e => handleSubmit(e)}>
+              <Button type="button" className="mr-2" variant="outline-success"  onClick={e => handleSubmit(e)}>
                 Search
               </Button>
             </Form>
