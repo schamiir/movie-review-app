@@ -1,5 +1,5 @@
 
-![Logo](https://i.imgur.com/lJqAOxJ.png)
+![Logo](https://i.imgur.com/ln2pXmO.png)
 
 
 # CineMate
@@ -48,36 +48,77 @@ Insert gif or link to demo
 ![App Screenshot](https://i.imgur.com/kprFG8h.png)
 
 
-## API Reference
+## Installing/Getting Started
+In order for the developer to Get Started 
 
-#### Get all items
+Clone the project
 
-```http
-  GET /api/items
+```bash
+  git clone https://github.com/strategio-tech/fp-sim7-strajutsu-kaisen
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+Go to the project directory
 
-#### Get item
-
-```http
-  GET /api/items/${id}
+```bash
+  cd my-project
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+Install all the node dependencies
 
-#### add(num1, num2)
+```bash
+  npm install
+```
 
-Takes two numbers and returns the sum.
+Start the server
+
+```bash
+  npm run dev
+```
+
+#### Atlas MongoDB Configuration
+
+1. Next, you will need to set up a MongoDB URI to connect to your MongoDB database.
+
+2. You can sign up for a free MongoDB Atlas account.
+
+3. Once logged you can create a new Shared Cluster that is cost free.
+
+4. Select your Cloud Provider and Region, select a free Cluster Tier and give your cluster a name.
+
+5. Once your Cluster is created you can get the connection url clicking in the connect button and selecting Connect Your App as your connection method
+
+To start the Springboot server for the application.
+
+```bash
+  spring.data.mongodb.database= <YOUR_DATABASE_NAME>
+  spring.data.mongodb.uri=mongodb+srv://<USERNAME>:<PASSWORD>@$cluster0.lehtzrl.mongodb.net
+```
+#### Maven
+
+If you don't have Maven installed globally on your local machine, run this command.
+
+```bash
+  ./mvnw install
+```
+
+To start the server:
+
+```bash
+  ./mvnw spring-boot:run
+```
+
+#### By default the development server is hosted on localhost:8080
 
 
-## Architecture Diagram
 
-![Diagram]()
+
+
+
+## Future Features
+
+- Community-driven reviews: Users can see other users' reviews for the same movie, allowing for a community-driven movie review platform.
+- Personalized recommendations: CineMate can suggest new movies that users are likely to enjoy based on their viewing history and reviews.
+
 
 ## Branding Reference
 
@@ -89,23 +130,16 @@ Takes two numbers and returns the sum.
 
 
 
-## Future Features
+## Links
 
-- Community-driven reviews: Users can see other users' reviews for the same movie, allowing for a community-driven movie review platform.
-- Personalized recommendations: CineMate can suggest new movies that users are likely to enjoy based on their viewing history and reviews.
-
-
+ - [Repository](https://github.com/strategio-tech/fp-sim7-strajutsu-kaisen)
+ - [Project Blog](https://medium.com/@schamir.poliard/cinemate-the-ultimate-movie-companion-c624acbcc3db)
+ 
 
 ## Feedback
 
 If you have any feedback, please reach out to us at hello@cinemate.com
 
-
-## Links
-
- - [Repository](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Project Blog](https://github.com/matiassingers/awesome-readme)
- 
 
 ## License
 
