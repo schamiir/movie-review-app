@@ -1,44 +1,58 @@
-import React from 'react'
+import {React, useState, useEffect} from 'react'
 import UserHeader from '../userpage/UserHeader'
 import "./UserReviews.scss"
 import { faComment, faComments, faHeart, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
 
 function UserReviews() {
-//Need the api call to get all the reviews for the user and display their data
+const [userReviews, setUserReviews] = useState([]);
+
+  useEffect(() => {
+    const user = sessionStorage.getItem("uid")
+    fetch(`http://localhost:8080/reviews/userId?userId=${user}`)
+      .then(res => res.json())
+      .then(data => setUserReviews(data)),
+  []})
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault()
+    fetch(`http://localhost:8080/reviews/delete/reviewId?reviewId=${e.target.id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+  }
+
+
 
   return (
     <>
     <UserHeader/>
-    <div className="projcard-container mt-5"  
-    // key={movie.imdb_id}
-    >
-      <div className="projcard projcard-blue" 
-    //   key=>{movie.imdb_id}
-      >
+    {userReviews.map((movie) =>(
+    <div className="projcard-container mt-5" key={movie.id}>
+      <div className="projcard projcard-blue">
         <div className="projcard-innerbox">  
-            {/* <img className="projcard-img"src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} /> */}
+            <img className="projcard-img"src={`https://image.tmdb.org/t/p/original${movie.moviePoster}`} alt={movie.movieTitle} />
           <div className="projcard-textbox">
-            <div className="projcard-title"> Movie Title
-                {/* {movie.title} */}
-                </div>
+            <div className="projcard-title">{movie.movieTitle}</div>
             <div className="projcard-bar"></div>
             <div className="projcard-description">
-                {/* Username */} <span className='fw-bolder'>Hello User</span>
-                <div>{/* Review */} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, odit hic. Consequatur necessitatibus ea perferendis voluptates. Accusantium, dolores ullam ducimus illo in natus? Ab doloremque pariatur obcaecati adipisci, repellendus asperiores.</div>
+                <span className='fw-bolder'>{movie.username}</span>
+                <div>{movie.review}</div>
             </div>
             <div>
             <button
-            // onClick={() => navigate(`/reviews/${movie.id}`)}
+            onClick={(e) => handleSubmit(e)}
             className="btn btn-outline-danger bi-heart"
-            >Delete  
-             <FontAwesomeIcon icon={faTrash} />
+            id={movie.id}
+            >Delete <FontAwesomeIcon icon={faTrash} />
             </button>
           </div>
           </div>
         </div>
       </div>
-    </div>
+    </div>))}
     </>
   )
 }
