@@ -12,6 +12,7 @@ import Register from './components/register/Register'
 import UserPage from './components/userpage/UserPage'
 import ResultsPage from './components/results/ResultsPage'
 import UserReviews from './components/allUserReviews/UserReviews'
+import ExploreReviews from './components/exploreReviews/ExploreReviews'
 
 
 
@@ -82,7 +83,9 @@ function App() {
               reviews ={reviews}
               setReviews = {setReviews} />}>
             </Route>
-            <Route path="/allreviews" element={<UserReviews/>}/>
+            {/* Need to add user id in the route below! :) */}
+            <Route path="/allUserReviews" element={<UserReviews/>}/>
+            <Route path="/exploreReviews" element={<ExploreReviews/>}/>
             <Route path='/results' element={<ResultsPage/>}/>
             <Route path="/logedIn" element={<UserPage movies={movies}/>}></Route>
             <Route path="*" element = {<NotFound/>}></Route>

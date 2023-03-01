@@ -6,6 +6,7 @@ import "./login.scss";
 import {useSelector, useDispatch} from "react-redux";
 import { logedIn } from "../../store/loggedIn";
 import { useNavigate } from "react-router-dom";
+import Header from "../header/Header";
 
 function Login() {
   useSelector(state => state.loggedIn);
@@ -41,8 +42,10 @@ function Login() {
   
   return (
     <>
+    <Header />
+    <>
       <div className="login-container d-flex justify-content-center pt-3">
-        <Card bg="dark" border="danger">
+        <Card bg="dark" border="danger" className="login-card">
           <Form className="form-container">
             <Form.Group className="mb-3 mx-3" controlId="formBasicEmail">
               <Form.Label>Username</Form.Label>
@@ -69,6 +72,7 @@ function Login() {
           {error.length > 0 && <p className='alert alert-danger text-center mt-2 justify-content-center' role="alert">{error}</p>}
         </Card>
       </div>
+    </>
     </>
   );
 }

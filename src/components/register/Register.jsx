@@ -3,6 +3,8 @@ import {React, useState} from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import Header from '../header/Header';
+import { Card } from 'react-bootstrap';
 
 
 export default function Register() {
@@ -36,37 +38,46 @@ export default function Register() {
 
 
   return (
-    <div>
-      <div className='box1'>
-        <div className='row'>   
-            <div className='col-3'></div>
-            <div className='col-6'>    
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicText">
-          <Form.Label>Username</Form.Label>
-          <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-        </Form.Group>
-        {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        </Form.Group> */}
-      {/* <Button variant='outline-info' className='me-2' type="submit">
-        Submit
-      </Button> */}
-        <Button variant="outline-danger" className='me-2' type="button" onClick={(e) => handleSubmit(e)} >Submit</Button>
-      </Form>
-    <div className='col-3'></div>
-    </div>
-    </div>
-    {error.length > 0 && <p className='alert alert-danger text-center mt-2 justify-content-center' role="alert">{error}</p>}
-    </div>
-    </div>
+    <>
+    <Header />
+    <>
+      <div className="register-container d-flex justify-content-center pt-3">
+        <Card bg="dark" border="danger" className='register-card'>
+          <Form className="form-container">
+          <Form.Group className="mb-3 mx-3" controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter Email" value={email} onChange={e => setEmail(e.target.value)}/>
+              <Form.Text className="text-muted">
+                We'll never share username with anyone else.
+              </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3 mx-3" controlId="formBasicUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" placeholder="Enter Username" value={username} onChange={e => setUsername(e.target.value)}/>
+              <Form.Text className="text-muted">
+                We'll never share username with anyone else.
+              </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3 mx-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/>
+            </Form.Group>
+            <Button
+              variant="outline-danger"
+              className="submit-button"
+              type="button"
+               onClick={(e) => handleSubmit(e)}
+            >
+              Submit
+            </Button>
+          </Form>
+        </Card>
+        {error.length > 0 && <p className='alert alert-danger text-center mt-2 justify-content-center' role="alert">{error}</p>}
+      </div>
+    </>
+    </>
   )
 }
 

@@ -1,12 +1,13 @@
 
 
-.box1 {
+.register-card {
 /* border: solid red 1px; */
-margin: 100px auto;
+/* margin: 100px auto; */
 /* background-image: url(https://as2.ftcdn.net/v2/jpg/00/38/07/05/1000_F_38070558_wpYEti3XoyNMkPEPCn0WIyhmboqJuysh.jpg); */
-background-image: url(https://as1.ftcdn.net/v2/jpg/01/41/48/32/1000_F_141483279_Ed0Wx0LF9tfF7zGVRYG7Kv5fL0suXYEb.jpg);
-
-
+background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) !important;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 
