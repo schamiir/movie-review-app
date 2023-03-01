@@ -70,7 +70,7 @@ const Reviews = ({getMovieData}) => {
 
     try
     {
-        const response = await api.post('/',{reviewBody:rev.value,imdb_id:movieId});
+        const response = await api.post('/reviews/create',{reviewBody:rev.value,imdb_id:movieId});
 
         const updatedReviews = [...reviews,{body:rev.value}];
 
