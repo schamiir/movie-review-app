@@ -9,6 +9,8 @@ import Reviews from './components/reviews/Reviews'
 import NotFound from './components/notFound/NotFound'
 import Login from './components/login/login.jsx'
 import Register from './components/register/Register'
+import SingleUserPage from './components/user_page/SingleUserPage'
+import AllUsersPage from './user_page_all/AllUsersPage'
 
 
 
@@ -71,7 +73,8 @@ function App() {
           <Route path="/" element={<Layout/>}>
             <Route path="/" element={<HomeScreen movies={movies} />} ></Route>
             <Route path="/login" element={<Login/>}></Route>
-          
+            <Route path="/single_user" element={<SingleUserPage />} /> 
+            <Route path='/all_users' element={<AllUsersPage />} />
            <Route path="/register" element={<Register />} />
             <Route path="/Reviews/:movieId" 
               element ={

@@ -1,0 +1,22 @@
+.movieBackground {
+
+    background-image: url(https://as1.ftcdn.net/v2/jpg/00/77/68/38/1000_F_77683876_PLF17M0IBi56nktgKNATVfOCEgqWFPBU.jpg);
+    min-height: 100%;
+    min-width: 1024px;
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 10;
+    left: 0;
+}
+
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    .movieBackground {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+
+}

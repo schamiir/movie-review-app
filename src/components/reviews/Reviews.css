@@ -1,0 +1,11 @@
+.image {
+    width: 20px;
+    height: 100px;
+    background-color: orange;
+    border: solid red 1px;
+}
+
+.cardContainer {
+    width: 400px;
+    height: 500px;
+}
