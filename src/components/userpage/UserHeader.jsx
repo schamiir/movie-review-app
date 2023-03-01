@@ -35,7 +35,7 @@ const UserHeader = ( { navigation }) => {
   }
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" >
       <Container>
         <Navbar.Brand href="/" style={{ color: "red" }}>
           <FontAwesomeIcon icon={faClapperboard} /> CineMate
@@ -43,16 +43,19 @@ const UserHeader = ( { navigation }) => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse>
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-5 my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <NavLink className="nav-link" to="/allreviews">
-              My Profile
+            <NavLink className="nav-link" to="/allUserReviews">
+              My Reviews
+            </NavLink>
+            <NavLink className="nav-link" to="/exploreReviews">
+              Explore
             </NavLink>
           </Nav>
           <>
-            <Form className="d-flex">
+            <Form className="d-flex w-50">
               <Form.Control
                 type="search"
                 placeholder={error ? "Invalid Response" : "Search"}
@@ -67,6 +70,7 @@ const UserHeader = ( { navigation }) => {
             </Form>
           </>
           <Button
+            className="ms-auto"
             variant="outline-danger"
             onClick={() => {
               navigate("/");
