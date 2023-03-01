@@ -6,7 +6,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
-import api from "../../api/axiosConfig";
 import { useState } from "react";
 
 const UserHeader = ( { navigation }) => {
@@ -17,7 +16,6 @@ const UserHeader = ( { navigation }) => {
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
-    let movies = []
     let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=a9bd84c15f8fa17808fb7e767b72bc08&query=${movie}`;
     fetch(searchUrl)
       .then(res => res.json())
@@ -26,10 +24,7 @@ const UserHeader = ( { navigation }) => {
                   setError("No movies found")
           }
           else {
-            console.log(data.results)
-            navigate("/results", {state:{movieData: data}})
-            // .navigation.push("/results", {movieData: data.results});
-            
+            navigate("/results", {state:{movieData: data}})            
           }})
 
   }
@@ -64,7 +59,7 @@ const UserHeader = ( { navigation }) => {
                 value={movie}
                 onChange={(e) => setMovie(e.target.value)}
               />
-              <Button type="button" variant="outline-success"  onClick={e => handleSubmit(e)}>
+              <Button type="button" className="mr-2" variant="outline-success"  onClick={e => handleSubmit(e)}>
                 Search
               </Button>
             </Form>

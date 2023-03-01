@@ -12,17 +12,13 @@ function ResultsPage() {
   const movies = state.state.movieData;
   const navigate = useNavigate();
 
-  useEffect (() => {
-    console.log(movies)
-  }, []) 
-
   return (
     <>
     <UserHeader />
     {
     movies.results.map((movie) => {
     return (
-    <div className="projcard-container"  key={movie.imdb_id}>
+    <div className="projcard-container"  key={movie.id}>
       <div className="projcard projcard-blue">
         <div className="projcard-innerbox">
             <Link to={`/reviews/${movie.id}`}>

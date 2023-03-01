@@ -33,7 +33,6 @@ function App() {
 
       .then((response) => {
         setMovies(response.data);
-        console.log(response.data);
       })
      
 

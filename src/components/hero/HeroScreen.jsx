@@ -27,9 +27,9 @@ const navigate = useNavigate();
         {
             movies.results.map((movie) => {
               return (
-                <Paper key={movie.imdb_id}>
-                    <div className='movie-card-container'>
-                        <div className='movie-card' style={{"--img": `url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")` }}>
+                <Paper key={movie.id}>
+                  <div className='movie-card-container' >
+                    <div className='movie-card' style={{"--img": `url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")` }}>
                             <div className='movie-detail'>
                                 <div className='movie-poster'>
                                     <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} />
@@ -37,13 +37,6 @@ const navigate = useNavigate();
                                 <div className='movie-title'>
                                     <h4>{movie.title}</h4>
                                 </div>
-                  
-                                {/* <div className='movie-button-container'>
-                                   
-                                    <div className='movie-review-button-container'>
-                                      <Button variant='warning' onClick={() => reviews(movie.imdb_id)}>Reviews</Button>
-                                    </div>
-                              </div> */}
                             </div>
                         </div>
                     </div>

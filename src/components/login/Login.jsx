@@ -12,8 +12,33 @@ function Login() {
   useSelector(state => state.loggedIn);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [user, setUser] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    fetch("http://localhost:8080/login/new-login", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: username,
+        password: password
+      })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if(data[0] == 'OK'){
+          sessionStorage.setItem("uid", data[1])
+          navigate("/logedIn");
+          dispatch(logedIn())
+        }
+        else{
+          setError("Username or Password Incorrect")
+        }
+      })
+  }
+
   
   return (
     <>
@@ -24,7 +49,7 @@ function Login() {
           <Form className="form-container">
             <Form.Group className="mb-3 mx-3" controlId="formBasicEmail">
               <Form.Label>Username</Form.Label>
-              <Form.Control type="email" placeholder="Enter username" />
+              <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)}/>
               <Form.Text className="text-muted">
                 We'll never share username with anyone else.
               </Form.Text>
@@ -32,20 +57,19 @@ function Login() {
 
             <Form.Group className="mb-3 mx-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
             </Form.Group>
             <Button
               variant="outline-danger"
               className="submit-button"
-              type="submit"
-              onClick={() => {
-                navigate("/logedIn");
-                dispatch(logedIn())}}
-              
-            >
+              type="button"
+              onClick={(e) => {
+                handleSubmit(e)
+              }}>
               Submit
             </Button>
           </Form>
+          {error.length > 0 && <p className='alert alert-danger text-center mt-2 justify-content-center' role="alert">{error}</p>}
         </Card>
       </div>
     </>
