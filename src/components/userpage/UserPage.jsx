@@ -1,10 +1,14 @@
 import React from 'react'
+import HomeScreen from '../home/HomeScreen'
+import UserHeader from './UserHeader'
+import HeroScreen from '../hero/HeroScreen'
 
-function UserPage() {
+function UserPage({movies}) {
   return (
-    <div>
-      
-    </div>
+    <>
+      <UserHeader />
+      <HeroScreen movies={movies}/> 
+    </>
   )
 }
 

@@ -5,13 +5,19 @@ import Container  from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import {NavLink, useNavigate} from "react-router-dom";
+import { useState } from "react"
+import { Form } from "react-bootstrap"
+import {useSelector, useDispatch} from "react-redux";
+import { logedOut } from "../../store/loggedIn";
 
 
 const Header = () => {
 
-
+  const logedIn = useSelector(state => state.loggedIn);
+  const dispatch = useDispatch();
   let navigate = useNavigate();
 
+  console.log(logedIn);
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -26,18 +32,23 @@ const Header = () => {
                         navbarScroll
                     >
                     <NavLink className='nav-link' to='/'>Home</NavLink>
-                   
                 </Nav>
-
-            <Button href="/login" variant="outline-light" className='me-2' >Login</Button>
+                  <>
+            <Button 
+            
+            variant="outline-light" 
+            className='me-2' 
+            onClick={()=>{
+              navigate("/login");
+            }}>Login</Button>
             <Button variant='outline-danger'
             onClick={()=>{
               navigate("/register");
             }}
             >Register</Button>
+            </>
         </Navbar.Collapse>
       </Container>
-       
     </Navbar>
    
   )
