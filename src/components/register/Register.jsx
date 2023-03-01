@@ -2,10 +2,11 @@ import './Register.css'
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Register() {
+  const navigate = useNavigate();
   return (
     <div>
           <div className='box1'>
@@ -30,7 +31,8 @@ export default function Register() {
       {/* <Button variant='outline-info' className='me-2' type="submit">
         Submit
       </Button> */}
-         <Button variant="outline-danger" className='me-2' type="submit">Submit</Button>{' '}
+         <Button variant="outline-danger" className='me-2' type="submit" onClick={() => {
+                navigate("/login");}} >Submit</Button>
     </Form>
     <div className='col-3'></div>
     </div>

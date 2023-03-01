@@ -9,6 +9,9 @@ import Reviews from './components/reviews/Reviews'
 import NotFound from './components/notFound/NotFound'
 import Login from './components/login/login.jsx'
 import Register from './components/register/Register'
+import UserPage from './components/userpage/UserPage'
+import ResultsPage from './components/results/ResultsPage'
+import UserReviews from './components/allUserReviews/UserReviews'
 
 
 
@@ -18,7 +21,7 @@ function App() {
   const [movie, setMovie] = useState({});
   const [reviews, setReviews] = useState();
 
-  const url = '/movie/popular?api_key=191d216958140cd776e116dfbb3d3a15';
+  const url = `/movie/popular?api_key=a9bd84c15f8fa17808fb7e767b72bc08`;
 
   const getMovies = async () => {
 
@@ -29,7 +32,7 @@ function App() {
 
       .then((response) => {
         setMovies(response.data);
-        console.log(movies)
+        console.log(response.data);
       })
      
 
@@ -66,7 +69,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      {/* <Header/> */}
       <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/" element={<HomeScreen movies={movies} />} ></Route>
@@ -79,9 +82,10 @@ function App() {
               movie={movie} 
               reviews ={reviews}
               setReviews = {setReviews} />}>
-              
             </Route>
-            
+            <Route path="/allreviews" element={<UserReviews/>}/>
+            <Route path='/results' element={<ResultsPage/>}/>
+            <Route path="/logedIn" element={<UserPage movies={movies}/>}></Route>
             <Route path="*" element = {<NotFound/>}></Route>
           </Route>
       </Routes>

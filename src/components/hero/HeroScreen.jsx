@@ -3,6 +3,8 @@ import Carousel from 'react-material-ui-carousel'
 import {Paper} from '@mui/material'
 import {Link, useNavigate} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import Header from '../header/Header'
+
 
 
 const HeroScreen = ({movies}) => {
@@ -18,6 +20,8 @@ const navigate = useNavigate();
     }
    console.log(movies)
   return (
+    <>
+    
     <div className='movie-carousel-container'>
       <Carousel>
         {
@@ -52,6 +56,7 @@ const navigate = useNavigate();
         }
       </Carousel>
     </div>
+    </>
   )
 }
 

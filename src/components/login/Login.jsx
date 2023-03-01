@@ -1,10 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./login.scss";
+import {useSelector, useDispatch} from "react-redux";
+import { logedIn } from "../../store/loggedIn";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  useSelector(state => state.loggedIn);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  
   return (
     <>
       <div className="login-container d-flex justify-content-center pt-3">
@@ -26,6 +35,10 @@ function Login() {
               variant="outline-danger"
               className="submit-button"
               type="submit"
+              onClick={() => {
+                navigate("/logedIn");
+                dispatch(logedIn())}}
+              
             >
               Submit
             </Button>
