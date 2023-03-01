@@ -47,8 +47,8 @@ const UserHeader = ( { navigation }) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <NavLink className="nav-link" to="/">
-              Home
+            <NavLink className="nav-link" to="/allreviews">
+              My Profile
             </NavLink>
           </Nav>
           <>

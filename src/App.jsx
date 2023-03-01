@@ -11,6 +11,7 @@ import Login from './components/login/login.jsx'
 import Register from './components/register/Register'
 import UserPage from './components/userpage/UserPage'
 import ResultsPage from './components/results/ResultsPage'
+import UserReviews from './components/allUserReviews/UserReviews'
 
 
 
@@ -82,6 +83,7 @@ function App() {
               reviews ={reviews}
               setReviews = {setReviews} />}>
             </Route>
+            <Route path="/allreviews" element={<UserReviews/>}/>
             <Route path='/results' element={<ResultsPage/>}/>
             <Route path="/logedIn" element={<UserPage movies={movies}/>}></Route>
             <Route path="*" element = {<NotFound/>}></Route>
