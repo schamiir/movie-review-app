@@ -9,7 +9,7 @@ function ExploreReviews() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/reviews/all-users")
+    fetch("http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/reviews/all-users")
     .then(resp => resp.json())
     .then(data => setAllReviews(data.reverse()))
   }, [])
