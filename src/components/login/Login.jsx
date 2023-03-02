@@ -31,7 +31,7 @@ function Login() {
         if(data[0] == 'OK'){
           sessionStorage.setItem("uid", data[1])
           sessionStorage.setItem("user", data[2])
-          navigate("/loggedIn");
+          navigate("/");
           dispatch(logedIn())
         }
         else{

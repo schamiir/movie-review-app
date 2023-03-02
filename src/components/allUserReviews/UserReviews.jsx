@@ -13,7 +13,7 @@ function UserReviews() {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        setUserReviews(data)})}, [userId])
+        setUserReviews(data.reverse())})}, [userId])
 
   const handleSubmit = async (e) =>{
     e.preventDefault()

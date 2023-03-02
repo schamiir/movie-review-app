@@ -30,14 +30,15 @@ const UserHeader = ( { navigation }) => {
 
   const handleLogout = () =>{
     sessionStorage.clear()
-    navigate("/")
+    window.location.pathname === "/" ? window.location.reload() : navigate("/")
+    // navigate(window.location.reload())
   }
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" >
       <Helmet><script src="https://kit.fontawesome.com/89d95f45ee.js" crossorigin="anonymous"></script></Helmet>
       <Container>
-        <Navbar.Brand href={sessionStorage.getItem("uid") ? "/loggedIn" : "/"} style={{ color: "red" }}>
+        <Navbar.Brand href="/" style={{ color: "red" }}>
           <i className="fa-solid fa-clapperboard"></i> CineMate
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

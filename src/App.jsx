@@ -69,7 +69,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header/> */}
       <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/" element={<HomeScreen movies={movies} />} ></Route>
@@ -77,17 +76,18 @@ function App() {
           
            <Route path="/register" element={<Register />} />
             <Route path="/Reviews/:movieId" 
-              element ={
-              <Reviews getMovieData = {getMovieData} 
-              movie={movie} 
-              reviews ={reviews}
-              setReviews = {setReviews} />}>
-            </Route>
+              element ={ <Reviews getMovieData = {getMovieData} 
+                                  movie={movie} 
+                                  reviews ={reviews}
+                                  setReviews = {setReviews} 
+                          />
+                        }
+            />
             <Route path="/user/:userId" element={<UserReviews/>}/>
             <Route path="/review/:reviewId" element={<UserReviews />} />
             <Route path="/exploreReviews" element={<ExploreReviews/>}/>
             <Route path='/results' element={<ResultsPage/>}/>
-            <Route path="/loggedIn" element={<UserPage movies={movies}/>}></Route>
+            {/* <Route path="/loggedIn" element={<UserPage movies={movies}/>}></Route> */}
             <Route path="*" element = {<NotFound/>}></Route>
           </Route>
       </Routes>

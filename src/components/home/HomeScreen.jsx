@@ -1,12 +1,19 @@
 import Header from '../header/Header'
 import HeroScreen from '../hero/HeroScreen'
+import UserHeader from "../userpage/UserHeader"
+import { useState, useEffect } from "react"
 
 const HomeScreen = ({movies}) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    sessionStorage.getItem("uid") ? setIsLoggedIn(true) : setIsLoggedIn(false)
+  }, []);
 
   return (
     <>
-    <Header/>
-    <HeroScreen movies = {movies}/>
+      {isLoggedIn ? <UserHeader /> : <Header/>}
+      <HeroScreen movies = {movies}/>
     </>
   )
 }
