@@ -9,7 +9,7 @@ function UserReviews() {
   const {userId} = useParams();
 
   useEffect(() => {
-    fetch(`${SPRING_API}/reviews/userId?userId=${userId}`)
+    fetch(`http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/reviews/userId?userId=${userId}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -17,7 +17,7 @@ function UserReviews() {
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
-    fetch(`${SPRING_API}/reviews/delete/reviewId?reviewId=${e.target.id}`, {
+    fetch(`http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/reviews/delete/reviewId?reviewId=${e.target.id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
     })

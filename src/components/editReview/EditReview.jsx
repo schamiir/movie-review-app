@@ -13,7 +13,7 @@ const Reviews = ({ getMovieData }) => {
 
 
     useEffect(() => {
-        fetch(`${SPRING_API}/reviews/edit/reviewId?reviewId=${reviewId}`, {
+        fetch(`http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/reviews/edit/reviewId?reviewId=${reviewId}`, {
             method: 'GET',
         })
             .then((result) => result.json())
@@ -26,7 +26,7 @@ const Reviews = ({ getMovieData }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        fetch(`${SPRING_API}/reviews/edit/reviewId?reviewId=${e.target.id}`, {
+        fetch(`http://localhost:8080/reviews/edit/reviewId?reviewId=${e.target.id}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

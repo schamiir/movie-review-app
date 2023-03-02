@@ -16,7 +16,7 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    fetch(`${SPRING_API}/login/new-user`, {
+    fetch("http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/login/new-user", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
