@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import { useState } from "react";
+import { Helmet } from "react-helmet"
 
 const UserHeader = ( { navigation }) => {
   let navigate = useNavigate();
@@ -36,9 +37,10 @@ const UserHeader = ( { navigation }) => {
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" >
+      <Helmet><script src="https://kit.fontawesome.com/89d95f45ee.js" crossorigin="anonymous"></script></Helmet>
       <Container>
         <Navbar.Brand href={sessionStorage.getItem("uid") ? "/loggedIn" : "/"} style={{ color: "red" }}>
-          <FontAwesomeIcon icon={faClapperboard} /> CineMate
+          <i className="fa-solid fa-clapperboard"></i> CineMate
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse>

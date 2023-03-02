@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faClapperboard } from "@fortawesome/free-solid-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faClapperboard } from "@fortawesome/free-solid-svg-icons"
 import Button from 'react-bootstrap/Button'
 import Container  from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
@@ -9,6 +9,8 @@ import { useState } from "react"
 import { Form } from "react-bootstrap"
 import {useSelector, useDispatch} from "react-redux";
 import { logedOut } from "../../store/loggedIn";
+import { Helmet } from "react-helmet"
+
 
 
 const Header = () => {
@@ -19,9 +21,10 @@ const Header = () => {
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
+      <Helmet><script src="https://kit.fontawesome.com/89d95f45ee.js" crossorigin="anonymous"></script></Helmet>
       <Container>
         <Navbar.Brand href='/' style={{color: 'red'}}>
-            <FontAwesomeIcon icon={faClapperboard}/> CineMate
+          <i className="fa-solid fa-clapperboard"></i> CineMate
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse>

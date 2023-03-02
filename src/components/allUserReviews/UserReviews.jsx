@@ -56,7 +56,7 @@ function UserReviews() {
             onClick={(e) => handleSubmit(e)}
             className="btn btn-outline-danger bi-heart me-2"
             id={movie.id}
-            >Delete <FontAwesomeIcon icon={faTrash} />
+                >Delete <i className="fa-solid fa-trash"></i>
             </button>)}
                 {/* {userId === sessionStorage.getItem("uid") && (<button
                   onClick={(e) => handleEdit(e)}

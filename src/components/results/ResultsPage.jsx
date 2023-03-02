@@ -33,7 +33,7 @@ function ResultsPage() {
             <button
             onClick={() => navigate(`/reviews/${movie.id}`)}
             className="btn btn-outline-danger bi-heart"
-            >Review <FontAwesomeIcon icon={faComment} /></button>
+                >Review <i className="fa-solid fa-comment"></i></button>
           </div>
           </div>
         </div>
