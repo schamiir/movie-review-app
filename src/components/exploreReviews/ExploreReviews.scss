@@ -2,10 +2,11 @@
     cursor: default;
 }
 
-#username-text {
+span > a.text-dark {
     text-decoration: none;
 }
 
-#username-text:hover {
+span > a.text-dark:hover {
     text-decoration:underline;
+    cursor: pointer;
 }
