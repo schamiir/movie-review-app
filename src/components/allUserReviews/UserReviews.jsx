@@ -1,8 +1,8 @@
 import {React, useState, useEffect} from 'react'
 import UserHeader from '../userpage/UserHeader'
 import "./UserReviews.scss"
-import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
+// import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function UserReviews() {
