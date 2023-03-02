@@ -26,6 +26,7 @@ function ResultsPage() {
             </Link>
           <div className="projcard-textbox">
             <div className="projcard-title">{movie.title}</div>
+            <span>Date of Release: {movie.release_date}</span>
             <div className="projcard-bar"></div>
             <div className="projcard-description">{movie.overview}</div>
             <div>

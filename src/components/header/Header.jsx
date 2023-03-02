@@ -34,13 +34,16 @@ const Header = () => {
                 </Nav>
                   <>
             <Button 
-            
-            variant="outline-light" 
-            className='me-2' 
+            // variant="outline-light" 
+            className='me-2 btn btn-light'
+            type="button"
             onClick={()=>{
               navigate("/login");
             }}>Login</Button>
-            <Button variant='outline-danger'
+            <Button 
+            // variant='outline-light'
+            className="btn btn-danger"
+            type="button"
             onClick={()=>{
               navigate("/register");
             }}
