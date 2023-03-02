@@ -1,12 +1,8 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faClapperboard } from "@fortawesome/free-solid-svg-icons"
 import Button from 'react-bootstrap/Button'
 import Container  from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import {NavLink, useNavigate} from "react-router-dom";
-import { useState } from "react"
-import { Form } from "react-bootstrap"
 import {useSelector, useDispatch} from "react-redux";
 import { logedOut } from "../../store/loggedIn";
 import { Helmet } from "react-helmet"

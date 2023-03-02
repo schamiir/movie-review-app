@@ -1,10 +1,8 @@
 import React from 'react'
 import UserHeader from '../userpage/UserHeader'
 import "./ResultsPage.scss"
-import { useEffect, useState } from "react"
 import { Link, Route, useLocation, useNavigate } from "react-router-dom"
-import { faComment, faComments, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
+
 
 
 function ResultsPage() {

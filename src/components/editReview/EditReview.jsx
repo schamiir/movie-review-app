@@ -1,12 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import api from '../../api/axiosConfig';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import ReviewForm from "../reviewForm/ReviewForm";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import React from 'react'
-import axios from "axios";
 import UserHeader from "../userpage/UserHeader";
 
 const Reviews = ({ getMovieData }) => {
