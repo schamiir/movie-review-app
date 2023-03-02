@@ -16,7 +16,7 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    fetch("http://localhost:8080/login/new-user", {
+    fetch(`${SPRING_API}/login/new-user`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

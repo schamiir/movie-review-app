@@ -9,7 +9,7 @@ function UserReviews() {
   const {userId} = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/reviews/userId?userId=${userId}`)
+    fetch(`${SPRING_API}/reviews/userId?userId=${userId}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -17,7 +17,7 @@ function UserReviews() {
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
-    fetch(`http://localhost:8080/reviews/delete/reviewId?reviewId=${e.target.id}`, {
+    fetch(`${SPRING_API}/reviews/delete/reviewId?reviewId=${e.target.id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
     })

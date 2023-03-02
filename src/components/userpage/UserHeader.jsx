@@ -31,7 +31,6 @@ const UserHeader = ( { navigation }) => {
   const handleLogout = () =>{
     sessionStorage.clear()
     window.location.pathname === "/" ? window.location.reload() : navigate("/")
-    // navigate(window.location.reload())
   }
 
   return (
