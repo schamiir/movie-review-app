@@ -47,7 +47,7 @@ function Login() {
     <>
       <div className="login-container d-flex justify-content-center pt-3">
         <Card bg="dark" border="danger" className="login-card">
-          <Form className="form-container">
+            <Form className="form-container" onSubmit={(e) => handleSubmit(e)}>
             <Form.Group className="mb-3 mx-3" controlId="formBasicEmail">
               <Form.Label>Username</Form.Label>
               <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)}/>
@@ -61,13 +61,11 @@ function Login() {
               <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
             </Form.Group>
             <Button
-              variant="outline-danger"
-              className="submit-button"
-              type="button"
-              onClick={(e) => {
-                handleSubmit(e)
-              }}>
-              Submit
+              variant="outline-light"
+              className="btn btn-danger submit-button"
+              type="submit"
+              role="button"
+            >Login
             </Button>
           </Form>
           {error.length > 0 && <p className='alert alert-danger text-center mt-2 justify-content-center' role="alert">{error}</p>}

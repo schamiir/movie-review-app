@@ -43,7 +43,7 @@ export default function Register() {
     <>
       <div className="register-container d-flex justify-content-center pt-3">
         <Card bg="dark" border="danger" className='register-card'>
-          <Form className="form-container">
+          <Form className="form-container" onSubmit={(e) => handleSubmit(e)}>
           <Form.Group className="mb-3 mx-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" placeholder="Enter Email" value={email} onChange={e => setEmail(e.target.value)}/>
@@ -65,12 +65,12 @@ export default function Register() {
               <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/>
             </Form.Group>
             <Button
-              variant="outline-danger"
-              className="submit-button"
-              type="button"
-               onClick={(e) => handleSubmit(e)}
+              variant="outline-light"
+              className="btn btn-danger submit-button"
+              role="button"
+              type="submit"
             >
-              Submit
+              Register
             </Button>
           </Form>
         </Card>

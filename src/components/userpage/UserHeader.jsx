@@ -47,7 +47,7 @@ const UserHeader = ( { navigation }) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <NavLink className="nav-link" to="/my-reviews">
+            <NavLink className="nav-link" to={`/user/${sessionStorage.getItem("uid")}`}>
               My Reviews
             </NavLink>
             <NavLink className="nav-link" to="/exploreReviews">
@@ -58,7 +58,7 @@ const UserHeader = ( { navigation }) => {
             <Form className="d-flex w-50" onSubmit={e => handleSubmit(e)}>
               <Form.Control
                 type="search"
-                placeholder={error ? "Invalid Response" : "Search"}
+                placeholder={error ? "Invalid Response" : "Search here for movies!"}
                 className={error ? 'me-2 outline-red form-control' : 'me-2 form-control'}
                 aria-label="Search"
                 value={movie}

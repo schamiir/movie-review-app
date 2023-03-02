@@ -18,7 +18,6 @@ const navigate = useNavigate();
     if(!movies){
       return null
     }
-   console.log(movies)
   return (
     <>
     

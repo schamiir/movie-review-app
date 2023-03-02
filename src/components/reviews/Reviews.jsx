@@ -47,7 +47,7 @@ const handleSubmit = async (e) => {
         .then(data => {
             console.log(data)
             if (data == "CREATED") {
-                navigate("/my-reviews")
+                navigate(`/user/${sessionStorage.getItem("uid")}`)
             }
             else {
                 setError("Unable to Register. Error: " + data)
@@ -74,12 +74,12 @@ const handleSubmit = async (e) => {
         <Col>
             <Row>
                 <Col>
-                    <Form>
+                                  <Form onSubmit={(e) => handleSubmit(e)}>
                         <Form.Group className='mb-3'style={{height:"200px"}} controlId='exampleForm.ControlTextarea1'>
                             <Form.Label>Write your Review!</Form.Label>
                             <Form.Control type="text" as="textarea" value={review} onChange={e => setReview(e.target.value)} rows={5}/>
                         </Form.Group>
-                                      <Button type="button" className="btn btn-light" variant='outline-primary' onClick={handleSubmit}>Submit</Button>
+                        <Button role="button" type="submit" className="btn btn-light" variant='outline-primary'>Submit</Button>
                     </Form>
                 </Col>
             </Row>
