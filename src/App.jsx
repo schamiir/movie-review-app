@@ -14,10 +14,8 @@ import ResultsPage from './components/results/ResultsPage'
 import UserReviews from './components/allUserReviews/UserReviews'
 import ExploreReviews from './components/exploreReviews/ExploreReviews'
 
-
-
 function App() {
-
+  
   const [movies, setMovies] = useState();
   const [movie, setMovie] = useState({});
   const [reviews, setReviews] = useState();

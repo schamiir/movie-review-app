@@ -9,14 +9,10 @@ function ExploreReviews() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/reviews/all-users")
+    fetch(`${SPRING_API}/reviews/all-users`)
     .then(resp => resp.json())
     .then(data => setAllReviews(data.reverse()))
   }, [])
-
-  function capitalize (str) {
-    return str[0].toUpperCase + str.slice(1)
-  }
 
   const handleUserLink = (e) => {
     navigate(`/user/${e.target.id}`)
