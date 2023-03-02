@@ -30,7 +30,7 @@ So why wait? Download CineMate today and join a community of movie lovers who sh
 
 **Build:** Maven, NPM (build react app)
 
-**Test:** Postman(API), Jest(JavaScript), JUnit(Java)
+**Test:** Postman(API), Jest
 
 **Release:** GitHub
 
@@ -117,7 +117,7 @@ To start the server:
 
 
 # Architectural Diagram
-![App Screenshot](https://i.imgur.com/eSV3KBb.png)
+![App Screenshot](https://i.imgur.com/SxH5xL1.png)
 
 
 
