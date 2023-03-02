@@ -48,7 +48,7 @@ So why wait? Download CineMate today and join a community of movie lovers who sh
 
 ## Demo
 
-Insert gif or link to demo
+https://cinemate-now.netlify.app/
 
 
 ## Screenshots
