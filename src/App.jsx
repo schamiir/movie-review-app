@@ -7,7 +7,7 @@ import HomeScreen from './components/home/HomeScreen'
 import Header from './components/header/Header'
 import Reviews from './components/reviews/Reviews'
 import NotFound from './components/notFound/NotFound'
-import Login from './components/login/login.jsx'
+import Login from './components/login/Login.jsx'
 import Register from './components/register/Register'
 import UserPage from './components/userpage/UserPage'
 import ResultsPage from './components/results/ResultsPage'
@@ -84,6 +84,7 @@ function App() {
               setReviews = {setReviews} />}>
             </Route>
             <Route path="/user/:userId" element={<UserReviews/>}/>
+            <Route path="/review/:reviewId" element={<UserReviews />} />
             <Route path="/exploreReviews" element={<ExploreReviews/>}/>
             <Route path='/results' element={<ResultsPage/>}/>
             <Route path="/loggedIn" element={<UserPage movies={movies}/>}></Route>
