@@ -12,21 +12,29 @@ So why wait? Download CineMate today and join a community of movie lovers who sh
 
 ## Authors
 
-- [John Emilio](https://www.github.com/JohnEmilio)
-- [Schamir Poliard](https://www.github.com/Schamiir)
-- [Tyson Roussel](https://www.github.com/TysonR0319)
-- [Norbert Seals](https://www.github.com/Norbert305)
-- [Juan José Guanipa](https://www.github.com/Juanjosegunipa)
+- [John Emilio](https://www.github.com/JohnEmilio) : [LinkedIn](https://www.linkedin.com/in/john-emilio/)
+- [Schamir Poliard](https://www.github.com/Schamiir) : [LinkedIn](https://www.linkedin.com/in/schamirpoliard/)
+- [Tyson Roussel](https://www.github.com/TysonR0319) : [LinkedIn](https://www.linkedin.com/in/tysonrobert/)
+- [Norbert Seals](https://www.github.com/Norbert305) : [LinkedIn](https://www.linkedin.com/in/norbert-seals/)
+- [Juan José Guanipa](https://www.github.com/Juanjosegunipa) : [LinkedIn](https://www.linkedin.com/in/jjjguanipa/)
 
 
 
 
 
-## Tech Stack
+## Tool Chain
 
-**Client:** React, Redux, BootStrap
+**Plan:** Google Meets, Slack, & Google Drive
 
-**Server:** MongoDB, Java, Springboot, Maven, Render
+**Code:** VSCode (React), IntelliJ(Java, Springboot), MongoDB
+
+**Build:** Maven, NPM (build react app)
+
+**Test:** Postman(API), Jest(JavaScript), JUnit(Java)
+
+**Release:** GitHub
+
+**Deploy & Monitor:** GitHub Actions, Render
 
 
 ## Features
@@ -49,18 +57,14 @@ Insert gif or link to demo
 
 
 ## Installing/Getting Started
-In order for the developer to Get Started 
 
-Clone the project
+**Fork the project to personal repo** : https://github.com/strategio-tech/fp-sim7-strajutsu-kaisen
 
-```bash
-  git clone https://github.com/strategio-tech/fp-sim7-strajutsu-kaisen
-```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd <into app folder>
 ```
 
 Install all the node dependencies
@@ -87,11 +91,13 @@ Start the server
 
 5. Once your Cluster is created you can get the connection url clicking in the connect button and selecting Connect Your App as your connection method
 
-To start the Springboot server for the application.
+To start the Springboot server for the application, go into the `application.properties` file.
+
+Add the following scripts:
 
 ```bash
-  spring.data.mongodb.database= <YOUR_DATABASE_NAME>
-  spring.data.mongodb.uri=mongodb+srv://<USERNAME>:<PASSWORD>@$cluster0.lehtzrl.mongodb.net
+  spring.data.mongodb.database=<YOUR_DATABASE_NAME>
+  spring.data.mongodb.uri=mongodb+srv://<USERNAME>:<PASSWORD>@$<CLUSTER_NAME>.mongodb.net
 ```
 #### Maven
 
@@ -110,14 +116,19 @@ To start the server:
 #### By default the development server is hosted on localhost:8080
 
 
-
+# Architectural Diagram
+![App Screenshot](https://i.imgur.com/eSV3KBb.png)
 
 
 
 ## Future Features
 
 - Community-driven reviews: Users can see other users' reviews for the same movie, allowing for a community-driven movie review platform.
+- A comment feature where the user can comment on another users review. 
+- A rating feature to the reviews page where the user can rate the movie from 1-100 with a slider. 
 - Personalized recommendations: CineMate can suggest new movies that users are likely to enjoy based on their viewing history and reviews.
+- Streaming recommendations where the app will display the streaming services the movie is avaliable to stream.
+- Follow user-to-user feature to add friends and follow what movies they are watching.
 
 
 ## Branding Reference
