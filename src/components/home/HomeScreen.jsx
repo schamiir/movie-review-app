@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 const HomeScreen = ({movies}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+
   useEffect(() => {
     sessionStorage.getItem("uid") ? setIsLoggedIn(true) : setIsLoggedIn(false)
   }, []);

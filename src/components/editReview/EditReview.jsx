@@ -26,7 +26,7 @@ const Reviews = ({ getMovieData }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        fetch(`http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/reviews/edit/reviewId?reviewId=${e.target.id}`, {
+        fetch(`http://localhost:8080/reviews/edit/reviewId?reviewId=${e.target.id}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

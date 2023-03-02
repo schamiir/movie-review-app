@@ -19,6 +19,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     fetch("http://cinemate-env.eba-xuvrv233.us-east-1.elasticbeanstalk.com/login/new-login", {
+
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

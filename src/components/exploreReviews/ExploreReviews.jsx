@@ -14,10 +14,6 @@ function ExploreReviews() {
     .then(data => setAllReviews(data.reverse()))
   }, [])
 
-  function capitalize (str) {
-    return str[0].toUpperCase + str.slice(1)
-  }
-
   const handleUserLink = (e) => {
     navigate(`/user/${e.target.id}`)
   }
