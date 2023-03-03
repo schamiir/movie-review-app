@@ -34,7 +34,7 @@ So why wait? Download CineMate today and join a community of movie lovers who sh
 
 **Release:** GitHub
 
-**Deploy & Monitor:** GitHub Actions, Render
+**Deploy & Monitor:** GitHub Actions, Render, AWS Elastic Beanstalk
 
 
 ## Features
@@ -54,6 +54,7 @@ https://cinemate-now.netlify.app/
 ## Screenshots
 
 ![App Screenshot](https://i.imgur.com/kprFG8h.png)
+![App Screenshot](https://i.imgur.com/1MN0Xeg.png)
 
 
 ## Installing/Getting Started
@@ -117,7 +118,7 @@ To start the server:
 
 
 # Architectural Diagram
-![App Screenshot](https://i.imgur.com/SxH5xL1.png)
+![App Screenshot](https://i.imgur.com/fAbzuOU.jpg)
 
 
 
